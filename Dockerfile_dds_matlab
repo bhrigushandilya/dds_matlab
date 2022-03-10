@@ -12,7 +12,9 @@ RUN tar -xvf OpenDDS-3.19.tar.gz
 
 WORKDIR OpenDDS-3.19 
 
-RUN ./configure && make
+RUN ./configure 
+
+RUN make
 
 WORKDIR /
 
