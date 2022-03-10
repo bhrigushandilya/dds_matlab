@@ -2,9 +2,7 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update
-
-RUN apt-get install libcpprest-dev libboost-all-dev cmake tcl wget g++ unzip -y && apt-get install default-jre openjdk-11-jre-headless openjdk-8-jre-headless -y && apt-get install build-essential software-properties-common -y && add-apt-repository ppa:ubuntu-toolchain-r/test -y && apt-get update && apt-get install gcc-snapshot -y
+RUN apt-get update && apt-get install libcpprest-dev libboost-all-dev cmake tcl wget g++ unzip -y && apt-get install default-jre openjdk-11-jre-headless openjdk-8-jre-headless -y && apt-get install build-essential software-properties-common -y && add-apt-repository ppa:ubuntu-toolchain-r/test -y && apt-get update && apt-get install gcc-snapshot -y
 
 COPY OpenDDS-3.19.tar.gz /
 
