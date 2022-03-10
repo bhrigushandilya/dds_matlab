@@ -26,6 +26,10 @@ WORKDIR opencv-4.x
 
 RUN mkdir -p build && cd build && cmake .. && cmake --build . && make install
 
+WORKDIR /OpenDDS-3.19
+
+RUN sh setenv.sh
+
 WORKDIR /
 
 RUN tar -xvf dds_matlab_2022_with_logging_10_5_Mridul_minimal.tar.xz
