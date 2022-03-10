@@ -18,7 +18,9 @@ RUN make
 
 WORKDIR /
 
-RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip / && unzip opencv.zip
+RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip 
+
+RUN unzip opencv.zip
 
 WORKDIR opencv-4.x
 
