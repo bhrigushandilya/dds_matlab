@@ -1,0 +1,27 @@
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update
+
+RUN apt-get install libcpprest-dev libboost-all-dev cmake tcl wget g++ unzip -y && apt-get install default-jre openjdk-11-jre-headless openjdk-8-jre-headless -y && apt-get install build-essential software-properties-common -y && add-apt-repository ppa:ubuntu-toolchain-r/test -y && apt-get update && apt-get install gcc-snapshot -y
+
+COPY OpenDDS-3.19.tar.gz /
+
+COPY dds_matlab_2022_with_logging_10_5_Mridul_minimal.tar.xz /
+
+RUN tar -xvf OpenDDS-3.19.tar.gz
+
+WORKDIR OpenDDS-3.19 
+
+RUN ./configure && make
+
+WORKDIR /
+
+RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip / && unzip opencv.zip
+
+WORKDIR opencv-4.x
+
+RUN mkdir -p build && cd build && cmake .. && cmake --build .
+
+
