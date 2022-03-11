@@ -28,7 +28,9 @@ RUN mkdir -p build && cd build && cmake .. && cmake --build . && make install
 
 WORKDIR /OpenDDS-3.19
 
-RUN /bin/bash -c 'source /OpenDDS-3.19/setenv.sh'
+RUN /bin/bash -c 'source /OpenDDS-3.19/setenv.sh' && chmod +x /OpenDDS-3.19/setenv.sh
+
+RUN ./OpenDDS-3.19/setenv.sh
 
 WORKDIR /
 
