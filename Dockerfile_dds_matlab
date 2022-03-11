@@ -30,7 +30,7 @@ WORKDIR /OpenDDS-3.19
 
 RUN /bin/bash -c 'source /OpenDDS-3.19/setenv.sh' && chmod +x /OpenDDS-3.19/setenv.sh
 
-RUN ./OpenDDS-3.19/setenv.sh
+RUN ./setenv.sh
 
 WORKDIR /
 
