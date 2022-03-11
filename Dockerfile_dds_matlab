@@ -26,11 +26,9 @@ WORKDIR opencv-4.x
 
 RUN mkdir -p build && cd build && cmake .. && cmake --build . && make install
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
 WORKDIR /OpenDDS-3.19
 
-RUN source setenv.sh
+RUN /bin/bash -c 'source /OpenDDS-3.19/setenv.sh'
 
 WORKDIR /
 
