@@ -30,14 +30,14 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 WORKDIR /OpenDDS-3.19
 
-RUN source setenv.sh
+#RUN source setenv.sh
 
-WORKDIR /
+#WORKDIR /
 
-RUN tar -xvf dds_matlab_2022_with_logging_10_5_Mridul_minimal.tar.xz
+#RUN tar -xvf dds_matlab_2022_with_logging_10_5_Mridul_minimal.tar.xz
 
-WORKDIR dds_matlab_2022_with_logging_10_5_Mridul_minimal/dds_matlab/bin
+#WORKDIR dds_matlab_2022_with_logging_10_5_Mridul_minimal/dds_matlab/bin
 
-RUN cmake .. && make -j8
+#RUN cmake .. && make -j8
 
 
